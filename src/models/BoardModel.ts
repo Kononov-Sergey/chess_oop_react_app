@@ -17,4 +17,6 @@ export class BoardClass {
       this.cells.push(row);
     }
   }
+
+  public addAllFigures() {}
 }
