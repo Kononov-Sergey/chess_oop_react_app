@@ -7,7 +7,13 @@ interface CellProps {
 }
 
 const Cell: React.FC<CellProps> = (props) => {
-  return <div className={`${classes.cell} ${classes[props.cell.color]}`}></div>;
+  return (
+    <div className={`${classes.cell} ${classes[props.cell.color]}`}>
+      {props.cell.figure?.logo && (
+        <img src={props.cell.figure.logo} alt={props.cell.figure.name}></img>
+      )}
+    </div>
+  );
 };
 
 export default Cell;

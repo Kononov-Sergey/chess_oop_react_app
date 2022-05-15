@@ -1,6 +1,6 @@
 import { Colors } from "../ColorsModel";
 import { CellClass } from "../CellModel";
-import logo from "../../assets/black-bishop.png";
+
 export enum FigureNames {
   FIGURE = "фигура",
   BISHOP = "слон",
@@ -13,7 +13,7 @@ export enum FigureNames {
 
 export class Figure {
   color: Colors;
-  logo: HTMLImageElement | null;
+  logo: string | null;
   cell: CellClass;
   name: FigureNames;
   readonly id: number;

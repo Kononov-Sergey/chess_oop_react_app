@@ -12,6 +12,7 @@ const App = () => {
   function restart() {
     const newBoard = new BoardClass();
     newBoard.initBoard();
+    newBoard.addAllFigures();
     setBoard(newBoard);
   }
   return (

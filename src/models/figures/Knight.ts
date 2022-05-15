@@ -3,7 +3,7 @@ import { Colors } from "../ColorsModel";
 import { Figure, FigureNames } from "./FigureModule";
 
 import blackKnightLogo from "../../assets/black-knight.png";
-import whiteKnightLogo from "../../assets/white-king.png";
+import whiteKnightLogo from "../../assets/white-knight.png";
 
 export class Knight extends Figure {
   constructor(cell: CellClass, color: Colors) {
