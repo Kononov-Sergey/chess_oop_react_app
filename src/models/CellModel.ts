@@ -1,18 +1,18 @@
-import { Board } from "./BoardModel";
+import { BoardClass } from "./BoardModel";
 import { Colors } from "./ColorsModel";
 import { Figure } from "./figures/FigureModule";
 
-export class Cell {
+export class CellClass {
   readonly x: number;
   readonly y: number;
   readonly color: Colors;
   figure: Figure | null;
-  board: Board;
+  board: BoardClass;
   avalilable: boolean;
   id: number;
 
   constructor(
-    board: Board,
+    board: BoardClass,
     x: number,
     y: number,
     color: Colors,
