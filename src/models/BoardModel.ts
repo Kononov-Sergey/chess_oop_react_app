@@ -10,7 +10,7 @@ import { Rook } from "./figures/Rook";
 export class BoardClass {
   cells: CellClass[][] = [];
 
-  public initBoard() {
+  public initBoard(): void {
     for (let i = 0; i < 8; i++) {
       const row: CellClass[] = [];
       for (let j = 0; j < 8; j++) {
@@ -23,8 +23,24 @@ export class BoardClass {
       this.cells.push(row);
     }
   }
-  public getCell(x: number, y: number) {
+  public getCell(x: number, y: number): CellClass {
     return this.cells[x][y];
+  }
+
+  public displayMoveForCell(selectedCell: CellClass | null) {
+    for (let i = 0; i < this.cells.length; i++) {
+      const row = this.cells[i];
+      for (let j = 0; j < row.length; j++) {
+        const element = row[j];
+        element.avalilable = !!selectedCell?.figure?.canMove(element);
+      }
+    }
+  }
+
+  public getNewBoard(): BoardClass {
+    const newBoard = new BoardClass();
+    newBoard.cells = this.cells;
+    return newBoard;
   }
 
   private addBishop() {
