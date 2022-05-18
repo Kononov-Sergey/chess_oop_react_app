@@ -35,4 +35,17 @@
   height: 20px;
   border-radius: 50px;
   background-color: rgb(188, 201, 94);
+  animation: wideout 0.1s;
+}
+
+@keyframes wideout {
+  from {
+    width: 0px;
+    height: 0px;
+  }
+
+  to {
+    width: 20px;
+    height: 20px;
+  }
 }
