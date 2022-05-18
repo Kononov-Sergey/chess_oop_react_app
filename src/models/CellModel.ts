@@ -28,7 +28,7 @@ export class CellClass {
     this.id = Math.random();
   }
 
-  private withoutAFigure(): boolean {
+  public withoutAFigure(): boolean {
     return this.figure === null;
   }
 
@@ -50,9 +50,43 @@ export class CellClass {
   }
 
   public isEmptyHorizontal(target: CellClass): boolean {
+    if (this.y !== target.y) {
+      return false;
+    }
+    const [minX, maxX] = [
+      Math.min(this.x, target.x),
+      Math.max(this.x, target.x),
+    ];
+
+    for (let x = minX + 1; x < maxX; x++) {
+      if (!this.board.getCell(x, this.y).withoutAFigure()) {
+        return false;
+      }
+    }
     return true;
   }
   public isEmptyDiagonal(target: CellClass): boolean {
+    const diffX = Math.abs(target.x - this.x);
+    const diffY = Math.abs(target.y - this.y);
+    if (diffX !== diffY) {
+      return false;
+    }
+
+    const [directionX, directionY] = [
+      target.x < this.x ? -1 : 1,
+      target.y < this.y ? -1 : 1,
+    ];
+
+    for (let i = 1; i < diffY; i++) {
+      if (
+        !this.board
+          .getCell(this.x + directionX * i, this.y + directionY * i)
+          .withoutAFigure()
+      ) {
+        return false;
+      }
+    }
+
     return true;
   }
 

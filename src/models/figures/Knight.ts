@@ -16,6 +16,10 @@ export class Knight extends Figure {
     if (!super.canMove(target)) {
       return false;
     }
-    return true;
+
+    const diffX = Math.abs(target.x - this.cell.x);
+    const diffY = Math.abs(target.y - this.cell.y);
+
+    return (diffX === 1 && diffY === 2) || (diffX === 2 && diffY === 1);
   }
 }

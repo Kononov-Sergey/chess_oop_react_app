@@ -16,7 +16,11 @@ export class Queen extends Figure {
     if (!super.canMove(target)) {
       return false;
     }
-    if (!this.cell.isEmptyVertical(target)) {
+    if (
+      !this.cell.isEmptyVertical(target) &&
+      !this.cell.isEmptyHorizontal(target) &&
+      !this.cell.isEmptyDiagonal(target)
+    ) {
       return false;
     }
 
