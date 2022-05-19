@@ -1,0 +1,51 @@
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+.cell img {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.cell.selected {
+  background-color: rgb(188, 201, 94);
+}
+.cell.pointer {
+  cursor: pointer;
+}
+.cell.capture {
+  background-color: rgb(180, 78, 52);
+}
+
+.black-bg {
+  background-color: rgb(118, 150, 86);
+}
+.white-bg {
+  background-color: rgb(238, 238, 210);
+}
+
+.allowed-to-move {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: rgb(188, 201, 94);
+  animation: wideout 0.1s;
+}
+
+@keyframes wideout {
+  from {
+    width: 0px;
+    height: 0px;
+  }
+
+  to {
+    width: 20px;
+    height: 20px;
+  }
+}
