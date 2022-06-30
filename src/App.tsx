@@ -2,12 +2,23 @@ import React, { useEffect, useState } from "react";
 import classes from "./App.module.css";
 import Board from "./components/Board/Board";
 import { BoardClass } from "./models/BoardModel";
+import { Colors } from "./models/ColorsModel";
+import { PlayerClass } from "./models/PlayerModel";
 const App = () => {
   const [board, setBoard] = useState(new BoardClass());
-
+  const [whitePlayer, setWhitePlayer] = useState(new PlayerClass(Colors.WHITE));
+  const [blackPlayer, setBlackPlayer] = useState(new PlayerClass(Colors.BLACK));
+  const [currnetPlayer, setCurrnetPlayer] = useState<PlayerClass | null>(null);
   useEffect(() => {
+    setCurrnetPlayer(whitePlayer);
     restart();
   }, []);
+
+  function changeCurrentPlayer() {
+    setCurrnetPlayer((state) =>
+      state?.color === Colors.BLACK ? whitePlayer : blackPlayer
+    );
+  }
 
   function restart() {
     const newBoard = new BoardClass();
@@ -17,7 +28,12 @@ const App = () => {
   }
   return (
     <section className={classes.container}>
-      <Board board={board} setBoard={setBoard} />
+      <Board
+        board={board}
+        setBoard={setBoard}
+        currentPlayer={currnetPlayer}
+        swapPlayer={changeCurrentPlayer}
+      />
     </section>
   );
 };

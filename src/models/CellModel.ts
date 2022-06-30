@@ -1,4 +1,3 @@
-import { createFalse } from "typescript";
 import { BoardClass } from "./BoardModel";
 import { Colors } from "./ColorsModel";
 import { Figure } from "./figures/FigureModel";

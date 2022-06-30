@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { BoardClass } from "../../models/BoardModel";
 import { CellClass } from "../../models/CellModel";
+import { PlayerClass } from "../../models/PlayerModel";
 import Cell from "../Cell/Cell";
 import classes from "./Board.module.css";
 
 interface BoardProps {
   board: BoardClass;
   setBoard: (board: BoardClass) => void;
+  currentPlayer: PlayerClass | null;
+  swapPlayer: () => void;
 }
 
 const Board: React.FC<BoardProps> = (props) => {
@@ -29,9 +32,12 @@ const Board: React.FC<BoardProps> = (props) => {
       selectedCell.figure.canMove(cell)
     ) {
       selectedCell.moveFigure(cell);
+      props.swapPlayer();
       setSelectedCell(null);
     } else {
-      setSelectedCell(cell);
+      if (cell.figure?.color === props.currentPlayer?.color) {
+        setSelectedCell(cell);
+      }
     }
   };
 
