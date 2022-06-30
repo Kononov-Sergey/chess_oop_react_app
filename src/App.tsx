@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./App.module.css";
 import Board from "./components/Board/Board";
+import LostFigures from "./components/History/LostFigures";
 import { BoardClass } from "./models/BoardModel";
 import { Colors } from "./models/ColorsModel";
 import { PlayerClass } from "./models/PlayerModel";
@@ -34,6 +35,8 @@ const App = () => {
         currentPlayer={currnetPlayer}
         swapPlayer={changeCurrentPlayer}
       />
+      <LostFigures title={"чёрных"} lostFigureArray={board.lostBlackFigures} />
+      <LostFigures title={"белых"} lostFigureArray={board.lostWhiteFigures} />
     </section>
   );
 };

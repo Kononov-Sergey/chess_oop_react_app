@@ -1,4 +1,4 @@
-import { BoardClass } from "./BoardModel";
+import { BoardClass, LostFigure } from "./BoardModel";
 import { Colors } from "./ColorsModel";
 import { Figure } from "./figures/FigureModel";
 
@@ -89,9 +89,33 @@ export class CellClass {
     return true;
   }
 
+  private addLostFigure(figure: Figure) {
+    let currnetArray: LostFigure[] = [];
+    if (figure.color === Colors.BLACK) {
+      currnetArray = this.board.lostBlackFigures;
+    } else {
+      currnetArray = this.board.lostWhiteFigures;
+    }
+    let isNew = true;
+    debugger;
+    for (let i = 0; i < currnetArray.length; i++) {
+      if (currnetArray[i].figure.name === figure.name) {
+        currnetArray[i].quantity++;
+        isNew = false;
+        break;
+      }
+    }
+    if (isNew) {
+      currnetArray.push({ quantity: 1, figure: figure });
+    }
+  }
+
   public moveFigure(target: CellClass) {
     if (this.figure && this.figure.canMove(target)) {
       this.figure.moveFigure(target);
+      if (target.figure) {
+        this.addLostFigure(target.figure);
+      }
       target.figure = this.figure;
       this.figure = null;
     }

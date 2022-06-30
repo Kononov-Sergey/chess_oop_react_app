@@ -1,14 +1,23 @@
 import { CellClass } from "./CellModel";
 import { Colors } from "./ColorsModel";
 import { Bishop } from "./figures/Bishop";
+import { Figure } from "./figures/FigureModel";
 import { King } from "./figures/King";
 import { Knight } from "./figures/Knight";
 import { Pawn } from "./figures/Pawn";
 import { Queen } from "./figures/Queen";
 import { Rook } from "./figures/Rook";
 
+export type LostFigure = {
+  quantity: number;
+  figure: Figure;
+};
+
 export class BoardClass {
   cells: CellClass[][] = [];
+
+  lostWhiteFigures: LostFigure[] = [];
+  lostBlackFigures: LostFigure[] = [];
 
   public initBoard(): void {
     for (let i = 0; i < 8; i++) {

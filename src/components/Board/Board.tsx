@@ -22,6 +22,8 @@ const Board: React.FC<BoardProps> = (props) => {
 
   const updateBoard = () => {
     const newBoard = props.board.getNewBoard();
+    newBoard.lostBlackFigures = props.board.lostBlackFigures;
+    newBoard.lostWhiteFigures = props.board.lostWhiteFigures;
     props.setBoard(newBoard);
   };
 
