@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./App.module.css";
 import Board from "./components/Board/Board";
+import Timer from "./components/Board/Timer";
 import LostFigures from "./components/History/LostFigures";
 import { BoardClass } from "./models/BoardModel";
 import { Colors } from "./models/ColorsModel";
@@ -10,6 +11,7 @@ const App = () => {
   const [whitePlayer, setWhitePlayer] = useState(new PlayerClass(Colors.WHITE));
   const [blackPlayer, setBlackPlayer] = useState(new PlayerClass(Colors.BLACK));
   const [currnetPlayer, setCurrnetPlayer] = useState<PlayerClass | null>(null);
+  const [isFistClick, setIsFirstClick] = useState<boolean>(true);
   useEffect(() => {
     setCurrnetPlayer(whitePlayer);
     restart();
@@ -29,14 +31,30 @@ const App = () => {
   }
   return (
     <section className={classes.container}>
-      <Board
-        board={board}
-        setBoard={setBoard}
+      <Timer
         currentPlayer={currnetPlayer}
-        swapPlayer={changeCurrentPlayer}
+        restart={restart}
+        isFirstClick={isFistClick}
+        setIsFirstClick={setIsFirstClick}
       />
-      <LostFigures title={"чёрных"} lostFigureArray={board.lostBlackFigures} />
-      <LostFigures title={"белых"} lostFigureArray={board.lostWhiteFigures} />
+      {!isFistClick && (
+        <>
+          <Board
+            board={board}
+            setBoard={setBoard}
+            currentPlayer={currnetPlayer}
+            swapPlayer={changeCurrentPlayer}
+          />
+          <LostFigures
+            title={"чёрных"}
+            lostFigureArray={board.lostBlackFigures}
+          />
+          <LostFigures
+            title={"белых"}
+            lostFigureArray={board.lostWhiteFigures}
+          />
+        </>
+      )}
     </section>
   );
 };

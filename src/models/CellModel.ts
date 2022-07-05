@@ -97,7 +97,6 @@ export class CellClass {
       currnetArray = this.board.lostWhiteFigures;
     }
     let isNew = true;
-    debugger;
     for (let i = 0; i < currnetArray.length; i++) {
       if (currnetArray[i].figure.name === figure.name) {
         currnetArray[i].quantity++;
