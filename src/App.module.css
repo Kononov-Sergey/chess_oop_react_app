@@ -3,5 +3,11 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+
+header {
+  padding: 2rem;
+  background-color: #716040;
+  color: #fffffe;
 }

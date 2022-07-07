@@ -1,0 +1,11 @@
+.container {
+  background-color: #eaddcf;
+  padding: 1rem;
+  width: 25vw;
+  text-align: center;
+}
+.figure-block {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
