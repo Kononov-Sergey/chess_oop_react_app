@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { classicNameResolver } from "typescript";
 import { Colors } from "../../models/ColorsModel";
 import { PlayerClass } from "../../models/PlayerModel";
+import Button from "../UI/Button";
 import { makePrettyTime } from "../utility/makePrettyTime";
+import classes from "./Timer.module.css";
 
 interface TimerProps {
   currentPlayer: PlayerClass | null;
@@ -64,22 +67,20 @@ const Timer: React.FC<TimerProps> = (props) => {
     }
   }, [props.currentPlayer, props.isFirstClick]);
   return (
-    <div>
-      <div>
-        <button onClick={restartGame}>
-          {props.isFirstClick ? "Start" : "Restart"}
-        </button>
-        {!props.isFirstClick && (
-          <>
-            <h2>
-              Время чёрных - <time>{makePrettyTime(blackTime || 0)}</time>
-            </h2>
-            <h2>
-              Время белых - <time>{makePrettyTime(whiteTime || 0)}</time>
-            </h2>
-          </>
-        )}
-      </div>
+    <div className={classes.timerInner}>
+      <Button onClick={restartGame}>
+        {props.isFirstClick ? "Start" : "Restart"}
+      </Button>
+      {!props.isFirstClick && (
+        <div className={classes.timers}>
+          <h2>
+            Время чёрных - <time>{makePrettyTime(blackTime || 0)}</time>
+          </h2>
+          <h2>
+            Время белых - <time>{makePrettyTime(whiteTime || 0)}</time>
+          </h2>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import classes from "./Button.module.css";
 
-const Button = () => {
-  return <button>Button</button>;
+interface btnProps {
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+const Button: React.FC<btnProps> = (props) => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const onBtnClick = () => {
+    props.onClick();
+    setIsClicked((state) => !state);
+  };
+  return (
+    <button
+      className={`${classes.btn} ${isClicked && classes.clicked}`}
+      onClick={onBtnClick}
+    >
+      {props.children}
+    </button>
+  );
 };
 
 export default Button;

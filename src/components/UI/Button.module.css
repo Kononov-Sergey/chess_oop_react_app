@@ -1,0 +1,15 @@
+.btn {
+  background-color: #8c7851;
+  padding: 1.2rem 2rem;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  border: #8c7851 2px solid;
+  min-width: 130px;
+}
+.clicked {
+  background-color: transparent;
+  color: black;
+}

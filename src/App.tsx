@@ -32,7 +32,7 @@ const App = () => {
   }
   return (
     <>
-      <header>
+      <header className={classes.header}>
         <h1>ChesS_K</h1>
         <p>Chess game made by Sergey Kononov using OOP code style</p>
       </header>

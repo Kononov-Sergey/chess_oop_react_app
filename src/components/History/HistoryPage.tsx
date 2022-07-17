@@ -12,11 +12,11 @@ const HistoryPage: React.FC<HistoryPageProps> = (props) => {
     <aside className={classes.container}>
       <div className={classes["figure-block"]}>
         <LostFigures
-          title={"чёрных"}
+          title={"black"}
           lostFigureArray={props.board.lostBlackFigures}
         />
         <LostFigures
-          title={"белых"}
+          title={"white"}
           lostFigureArray={props.board.lostWhiteFigures}
         />
       </div>

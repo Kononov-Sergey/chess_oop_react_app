@@ -4,10 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
 }
 
-header {
+.header {
   padding: 2rem;
   background-color: #716040;
   color: #fffffe;
+  margin-bottom: 3rem;
 }

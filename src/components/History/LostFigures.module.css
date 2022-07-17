@@ -1,0 +1,9 @@
+.figure-box {
+  display: flex;
+  align-items: center;
+}
+.figure-box img {
+  --size-of-img: 45px;
+  width: var(--size-of-img);
+  height: var(--size-of-img);
+}
