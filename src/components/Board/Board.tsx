@@ -10,6 +10,7 @@ interface BoardProps {
   setBoard: (board: BoardClass) => void;
   currentPlayer: PlayerClass | null;
   swapPlayer: () => void;
+  isFirstClick: boolean;
 }
 
 const Board: React.FC<BoardProps> = (props) => {
@@ -72,6 +73,7 @@ const Board: React.FC<BoardProps> = (props) => {
           </React.Fragment>
         );
       })}
+      {props.isFirstClick && <div className={classes.wrapper} />}
     </div>
   );
 };

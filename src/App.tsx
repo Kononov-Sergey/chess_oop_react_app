@@ -49,6 +49,7 @@ const App = () => {
           setBoard={setBoard}
           currentPlayer={currnetPlayer}
           swapPlayer={changeCurrentPlayer}
+          isFirstClick={isFistClick}
         />
         <HistoryPage board={board} />
       </section>

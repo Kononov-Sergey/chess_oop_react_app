@@ -4,3 +4,21 @@
   display: flex;
   flex-wrap: wrap;
 }
+.wrapper {
+  position: absolute;
+  background-color: #7160409e;
+  width: calc(64px * 8);
+  height: calc(64px * 8);
+}
+.wrapper::after {
+  content: "Press Start to play";
+  position: relative;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 32px;
+  top: calc(50% - 50px);
+  left: calc(50% - 167px);
+  color: white;
+}
