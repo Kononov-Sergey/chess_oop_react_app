@@ -34,7 +34,8 @@ export class Pawn extends Figure {
     if (
       (target.y === this.cell.y + direction || // first cell against our figure
         (this.isFirstMove &&
-          target.y === this.cell.y + firstStepMoveDirection)) && // checking, whether is a first move
+          target.y === this.cell.y + firstStepMoveDirection &&
+          this.cell.board.getCell(target.x, target.y - 1).withoutAFigure())) && // checking, whether is a first move
       this.cell.board.getCell(target.x, target.y).withoutAFigure() && // checking, is cell has a figure within
       target.x === this.cell.x
     ) {
