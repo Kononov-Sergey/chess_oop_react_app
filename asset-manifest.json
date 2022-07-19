@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Kononov-Sergey/chesSK.github.io/static/css/main.00f24b80.css",
+    "main.js": "/Kononov-Sergey/chesSK.github.io/static/js/main.afb163ff.js",
+    "index.html": "/Kononov-Sergey/chesSK.github.io/index.html",
+    "main.00f24b80.css.map": "/Kononov-Sergey/chesSK.github.io/static/css/main.00f24b80.css.map",
+    "main.afb163ff.js.map": "/Kononov-Sergey/chesSK.github.io/static/js/main.afb163ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00f24b80.css",
+    "static/js/main.afb163ff.js"
+  ]
+}
