@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Kononov-Sergey/chess_oop_react_app/static/css/main.00f24b80.css",
-    "main.js": "/Kononov-Sergey/chess_oop_react_app/static/js/main.afb163ff.js",
-    "index.html": "/Kononov-Sergey/chess_oop_react_app/index.html",
-    "main.00f24b80.css.map": "/Kononov-Sergey/chess_oop_react_app/static/css/main.00f24b80.css.map",
-    "main.afb163ff.js.map": "/Kononov-Sergey/chess_oop_react_app/static/js/main.afb163ff.js.map"
+    "main.css": "/chess_oop_react_app/static/css/main.00f24b80.css",
+    "main.js": "/chess_oop_react_app/static/js/main.afb163ff.js",
+    "index.html": "/chess_oop_react_app/index.html",
+    "main.00f24b80.css.map": "/chess_oop_react_app/static/css/main.00f24b80.css.map",
+    "main.afb163ff.js.map": "/chess_oop_react_app/static/js/main.afb163ff.js.map"
   },
   "entrypoints": [
     "static/css/main.00f24b80.css",
